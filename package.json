@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "sass": "node-sass -w src/scss/ -o src/dist/css --recursive ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -20,7 +21,9 @@
     "vite": "^4.1.4"
   },
   "dependencies": {
+    "node-sass": "^8.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.58.3"
   }
 }
