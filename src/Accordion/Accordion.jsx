@@ -18,11 +18,7 @@ const Accordion = () => {
     <>
       <h1 className="main-title">How can we help you?</h1>
       {data.map(({ title, body, id }) => {
-        return (
-          <Fragment key={id}>
-            <AccordionItem title={title} body={body} id={id} />
-          </Fragment>
-        );
+        return <AccordionItem key={id} title={title} body={body} id={id} />;
       })}
     </>
   );
