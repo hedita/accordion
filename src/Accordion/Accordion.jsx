@@ -1,5 +1,6 @@
-import AccordionItem from "./AccordionItem";
 import { useState, useEffect, Fragment } from "react";
+import AccordionItem from "../AccordionItem/AccordionItem";
+import "./Accordion.scss";
 
 const Accordion = () => {
   const [data, setData] = useState([]);

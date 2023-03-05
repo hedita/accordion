@@ -1,0 +1,20 @@
+$sizing: 20px;
+
+.accordion {
+  max-width: auto;
+
+  .accordion-title {
+    padding: $sizing;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .accordion-title:hover {
+    background-color: lightgrey;
+  }
+
+  .accordion-content {
+    margin: $sizing;
+  }
+}
