@@ -10,11 +10,11 @@ function AccordionItem({ title, body, id }) {
 
   return (
     <div key={id} className="accordion">
-      <div className="accordion-title" onClick={handleActivity}>
+      <h2 className="accordion-title" onClick={handleActivity}>
         {title}
         <div>{isActive ? "▴" : "▼"}</div>
-      </div>
-      {isActive && <div className="accordion-content">{body}</div>}
+      </h2>
+      {isActive && <p className="accordion-content">{body}</p>}
     </div>
   );
 }
