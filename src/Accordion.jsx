@@ -1,37 +1,30 @@
-import React, { useState,useEffect } from "react";
-import "./scss/index.scss";
+import AccordionItem from "./AccordionItem";
+import { useState, useEffect, Fragment } from "react";
 
-function Accordion() {
-  const [isActive, setIsActive] = useState(false);
-  const [title , setTitle] = useState("");
-  const [body , setBody] = useState("");
+const Accordion = () => {
+  const [data, setData] = useState([]);
 
-
-  useEffect (() => {
+  useEffect(() => {
     requestAccordion();
   });
 
-  async function requestAccordion () {
-    const result = await fetch(`https://jsonplaceholder.typicode.com/posts`)
-    const [{title, body}] = await result.json();
-
-    setTitle(title)
-    setBody(body)
+  async function requestAccordion() {
+    const result = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+    const resultJson = await result.json();
+    setData(resultJson);
   }
-
   return (
     <>
       <h1 className="main-title">How can we help you?</h1>
-      <div className="accordion">
-        <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
-          {title}
-          <div>{isActive ? "▴" : "▼"}</div>
-        </div>
-        {isActive && <div className="accordion-content">{body}</div>}
-        <hr />
-      </div>
+      {data.map(({ title, body, id }) => {
+        return (
+          <Fragment key={id}>
+            <AccordionItem title={title} body={body} id={id} />
+          </Fragment>
+        );
+      })}
     </>
   );
-}
+};
 
 export default Accordion;
