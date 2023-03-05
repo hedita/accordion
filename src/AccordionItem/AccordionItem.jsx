@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import "./AccordionItem.scss";
 
 function AccordionItem({ title, body, id }) {
@@ -9,16 +9,14 @@ function AccordionItem({ title, body, id }) {
   }
 
   return (
-    <Fragment key={id}>
-      <div className="accordion">
-        <div className="accordion-title" onClick={handleActivity}>
-          {title}
-          <div>{isActive ? "▴" : "▼"}</div>
-        </div>
-        {isActive && <div className="accordion-content">{body}</div>}
-        <hr />
+    <div key={id} className="accordion">
+      <div className="accordion-title" onClick={handleActivity}>
+        {title}
+        <div>{isActive ? "▴" : "▼"}</div>
       </div>
-    </Fragment>
+      {isActive && <div className="accordion-content">{body}</div>}
+      <hr />
+    </div>
   );
 }
 
