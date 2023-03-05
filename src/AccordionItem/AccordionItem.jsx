@@ -15,7 +15,6 @@ function AccordionItem({ title, body, id }) {
         <div>{isActive ? "▴" : "▼"}</div>
       </div>
       {isActive && <div className="accordion-content">{body}</div>}
-      <hr />
     </div>
   );
 }
