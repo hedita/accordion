@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import "./scss/index.scss";
+import "./index.scss";
 
 function AccordionItem({ title, body, id }) {
   const [isActive, setIsActive] = useState(false);
