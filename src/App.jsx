@@ -1,10 +1,8 @@
 import ReactDOM from "react-dom/client";
-import Accordion from "./Accordion";
+import Accordion from "./Accordion/Accordion";
 
 const App = () => {
-  return (
-    <Accordion />
-  )
+  return <Accordion />;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
